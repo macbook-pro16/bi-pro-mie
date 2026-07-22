@@ -1,0 +1,39 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Dashboard {
+  id          String   @id @default("global")
+  name        String   @default("共有ダッシュボード")
+  layout      Json
+  annotations Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SharedSnapshot {
+  id          String   @id @default(cuid())
+  dashboardId String
+  layout      Json
+  annotations Json?
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime?
+
+  @@index([dashboardId])
+}
+
+model DataSource {
+  id     String @id @default(cuid())
+  userId String
+  index  String
+  name   String
+  config Json?
+
+  @@unique([userId, index])
+}
