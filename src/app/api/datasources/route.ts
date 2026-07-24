@@ -21,11 +21,8 @@ export async function GET() {
       const defaults = [
         { index: '001', name: '車両一覧' },
         { index: '001_prev', name: '車両一覧(昨日)' },
-        { index: '002', name: '受付表' },
-        { index: '003', name: 'タスク' },
-        { index: '004', name: '部品発注一覧' },
-        { index: '005', name: '顧客DB' },
-        { index: '006', name: '目標数値' },
+        { index: '002', name: '顧客DB' },
+        { index: '003', name: '目標数値' },
       ];
       // デフォルトをDBに登録
       await prisma.dataSource.createMany({
