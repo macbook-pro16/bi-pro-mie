@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
-const DASHBOARD_URL = 'https://bi-dashboard-phi-five.vercel.app/dashboard';
+const DASHBOARD_URL = 'https://bi-pro-mie.onrender.com/dashboard';
 
 export default function LoginPage() {
   const { data: session, status } = useSession();
@@ -33,7 +33,7 @@ export default function LoginPage() {
     // 非対応ブラウザの場合：専用の /go ページにリダイレクト
   if (!isSupportedBrowser) {
     useEffect(() => {
-            window.location.replace('https://bi-dashboard-phi-five.vercel.app/go');
+          window.location.replace('https://bi-pro-mie.onrender.com/go');
     }, []);
     return null;
   }
