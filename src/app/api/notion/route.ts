@@ -187,6 +187,18 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: false, error: `環境変数 [${envKey}] が定義されていません。` }, { status: 400 });
     }
 
+    // ★ダミー設定の場合はNotionへアクセスせず空データを返す
+    if (databaseId.includes('dummy') || databaseId === '001と同じID') {
+      return NextResponse.json({
+        success: true,
+        index,
+        totalCount: 0,
+        data: [],
+        hasMore: false,
+        nextCursor: null,
+      });
+    }
+
     // ユーザーマッピングの取得
     const userMap = await getUserMap(apiKey);
 
