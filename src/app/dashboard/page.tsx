@@ -76,11 +76,11 @@ import { getOrthogonalPath, getRoutePath, getMarkerDefs } from '../../utils/anno
 const DATABASE_CONFIG = [
   { index: '001', name: '車両一覧' },
   { index: '001_prev', name: '車両一覧（昨日のデータ三重）' },
-  { index: '002', name: '受付表' },
-  { index: '003', name: 'タスク' },
-  { index: '004', name: '部品発注一覧' },
-  { index: '005', name: '顧客DB' },
-  { index: '006', name: '目標数値' },
+  { index: '002', name: '顧客DB' },
+  { index: '003', name: '目標数値' },
+  { index: '004', name: 'dummy' },
+  { index: '005', name: 'dummy' },
+  { index: '006', name: 'dummy' },
 ];
 
 const DEFAULT_PAGE: DashboardPage = {
