@@ -75,7 +75,7 @@ import { getOrthogonalPath, getRoutePath, getMarkerDefs } from '../../utils/anno
 
 const DATABASE_CONFIG = [
   { index: '001', name: '車両一覧' },
-  { index: '001_prev', name: '車両一覧(昨日)' },
+  { index: '001_prev', name: '車両一覧（昨日のデータ三重）' },
   { index: '002', name: '受付表' },
   { index: '003', name: 'タスク' },
   { index: '004', name: '部品発注一覧' },
